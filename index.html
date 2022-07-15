@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<header>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Unet512 Browser</title>
+</header>
+<body>
+<!-- import ONNXRuntime Web from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.js"></script>
+<script type="text/javascript" src="../Final_Demo/nifti-reader-min.js"></script>
+<!-- Import @tensorflow/tfjs or @tensorflow/tfjs-core -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+<!-- Adds the WASM backend to the global backend registry -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm/dist/tf-backend-wasm.js"></script>
+<script src="utils.js"></script>
+<script src="vis_ct_with_label_wholevolume_3ranges.js"></script>
+
+</body>
+<div id="select" style="font-family:sans-serif">
+    <p>Select a file: <input type="file" id="file" name="files" /></p>
+    <hr />
+</div>
+
+<div id="progress" style="font-family:sans-serif">
+</div>
+
+<div id="results1">
+    <canvas id="myCanvas1" width="1000" height="1000"></canvas><br />
+    <input type="range" min="1" max="512" value="50" class="slider" id="myRange_1">
+
+</div>
+<div id="results_CT1">
+    <canvas id="myCanvas_CT1" width="1000" height="1000"></canvas><br />
+</div>
+<div id="results_Label1">
+    <canvas id="myCanvas_Label1" width="1000" height="1000"></canvas><br />
+</div>
+<div id="results2">
+    <canvas id="myCanvas2" width="1000" height="1000"></canvas><br />
+    <input type="range" min="1" max="512" value="50" class="slider" id="myRange_2">
+</div>
+<div id="results_CT2">
+    <canvas id="myCanvas_CT2" width="1000" height="1000"></canvas><br />
+</div>
+<div id="results_Label2">
+    <canvas id="myCanvas_Label2" width="1000" height="1000"></canvas><br />
+</div>
+<div id="results3">
+    <canvas id="myCanvas3" width="1000" height="1000"></canvas><br />
+    <input type="range" min="1" max="512" value="50" class="slider" id="myRange_3">
+</div>
+<div id="results_CT3">
+    <canvas id="myCanvas_CT3" width="1000" height="1000"></canvas><br />
+</div>
+<div id="results_Label3">
+    <canvas id="myCanvas_Label3" width="1000" height="1000"></canvas><br />
+</div>
+
+<script type="text/javascript">
+    document.getElementById('file').addEventListener('change', handleFileSelect, false);
+</script>
+
+</html>
